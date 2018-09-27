@@ -46,6 +46,8 @@ pipeline {
                            // new-app, simply call the `oc start-build` equivalent:
                            def buildSelector = bc.startBuild()
                            buildSelector.logs('-f')
+
+			   created.narrow("svc").expose();
                       } else {
 			   def buildSelector = app2.startBuild()
 			   buildSelector.logs('-f')
