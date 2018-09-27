@@ -12,7 +12,7 @@ pipeline {
                   if (!app2Exists) {
                            def app = openshift.newApp("https://github.com/giondo/appweb2.git","php")
                            app.narrow("svc").expose();
-			   app.logs('-f')
+			   logs('-f')
 		           //def dc = app.object()
                   	   //echo "new-app created a ${dc.kind} with name ${dc.metadata.name}"
                   	   //echo "The object has labels: ${dc.metadata.labels}"
