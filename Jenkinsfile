@@ -6,11 +6,11 @@ pipeline {
           steps {
             script {
               openshift.withCluster() {
-                openshift.withProject("ticforum2018") {
-		  def app1 = openshift.selector( "bc", "appweb1")
+                openshift.withProject("ticforum2018-php") {
+		  def app1 = openshift.selector( "bc", "appweb2")
 
                   if (!app1) {
-                           def app = openshift.newApp("https://github.com/giondo/appweb1.git","httpd")
+                           def app = openshift.newApp("https://github.com/giondo/appweb2.git","httpd")
                            app.narrow("svc").expose();
 		           def dc = app.object()
                   	   echo "new-app created a ${dc.kind} with name ${dc.metadata.name}"
