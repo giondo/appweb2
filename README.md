@@ -1,2 +1,2 @@
 # Created for Tic forum demo 2018
-Deploy an app with jenkins 
+Deploy a php application with jenkins 
