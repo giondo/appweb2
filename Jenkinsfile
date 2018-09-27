@@ -44,8 +44,8 @@ pipeline {
                            // And if after some processing within your pipeline, if you decide
                            // you need to initiate a new build after the one initiated by
                            // new-app, simply call the `oc start-build` equivalent:
-                           def buildSelector = bc.startBuild()
-                           buildSelector.logs('-f')
+                           //def buildSelector = bc.startBuild()
+                           //buildSelector.logs('-f')
 
 			   created.narrow("svc").expose();
                       } else {
